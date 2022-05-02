@@ -12,15 +12,13 @@ The code in our study is organized in the following major components, which roug
 
 1. Data Processing
 2. StarDist
-3. Deep-Learning
-4. CellProfiler (for feature extraction)
+3. Deep-Learning Models
+4. CellProfiler
 5. Spatial Feature Extraction
-6. Interpretable Model Training and Evaluation
+6. Interpretable Models
 7. Statistical Analysis
 
 To reproduce the deep-learning results, you only need to run the notebooks and scripts specified in sections 1-3.
-
-To reproduce the interpretable model results, run the notebooks and scripts specified in sections 1,2
 
 ### Data Processing
 
@@ -41,7 +39,7 @@ The [Stardist](https://github.com/stanfordmlgroup/lymphoma-ml/tree/main/stardist
 
 ### Deep-Learning
 
-TODO
+**TODO**
 
 ### CellProfiler
 
@@ -74,9 +72,11 @@ TODO:
 
 ### Spatial
 
+**TODO**
+
 ### Stats
 
-TODO
+**TODO**
 
 ### Overall TODOs
 
