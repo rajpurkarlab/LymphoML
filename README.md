@@ -9,6 +9,14 @@ Below we walk through the code files in this repo.
 
 ### Data Processing
 
+This directory contains files used to process the raw data into a format suitable for ingestion into deep-learning models or a CellProfiler pipeline.
+
+First, run [process_raw_data_to_hdf5.ipynb](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/processing/process_raw_data_to_hdf5.ipynb) to transforms each input tissue microarray (TMA) SVS file and QuPath annotation file into an HDF5 file. This notebook performs patch extraction on each TMA core and saves the output HDF5 files.
+
+Next, run [cores_to_tiff.py](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/processing/cores_to_tiff.py) to save each TMA core as a TIFF file (used as input for the CellProfiler pipeline). 
+
+Finally, run [process_hdf5_to_data_splits.ipynb](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/processing/process_hdf5_to_data_splits.ipynb), which splits the dataset into a train, validation, and test splits, according to a pre-determined train-val-test splits of the patients in the dataset.
+
 ### Stardist
 
 ### Deep-Learning
