@@ -66,7 +66,7 @@ The [CellProfiler](https://github.com/stanfordmlgroup/lymphoma-ml/tree/main/cell
 The [pipelines](https://github.com/stanfordmlgroup/lymphoma-ml/tree/main/cellprofiler/pipelines) subdirectory contains the CellProfiler project and pipeline files. Run the CellProfiler pipeline using the following command (e.g. for TMA 1):
 
 ```Shell
-cellprofiler -c -r -p stardist.cppipe -o ~/processed/cellprofiler_out/stardist/tma_1 -i ~/processed/cellprofiler_in/tma_1`
+cellprofiler -c -r -p stardist.cppipe -o ~/processed/cellprofiler_out/stardist/tma_1 -i ~/processed/cellprofiler_in/tma_1
 ```
 
 #### Feature Processing
@@ -77,7 +77,7 @@ The [feature_processing](https://github.com/stanfordmlgroup/lymphoma-ml/tree/mai
 
 Run the following command to extract nine (approximately) equally-sized patches from each core.
 ```Shell
-python patch_identifiers.py -n 9`
+python patch_identifiers.py -n 9
 ```
 - Run [feature_aggregation.py](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/cellprofiler/feature_processing/feature_aggregation.py) to aggregate features across all cells with the same `patch_id`. 
 
