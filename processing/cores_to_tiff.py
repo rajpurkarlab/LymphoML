@@ -1,27 +1,29 @@
 # Imports
-
+import glob
+import json
 import numpy as np
 import openslide
+import os
 import pandas as pd
 from PIL import Image
-
 from tqdm import tqdm
 
-import os
-import glob
+# Read Config
+config_path = '../config/config.json'
+with open(config_path, "r") as cnf:
+    config = json.load(cnf)
 
 # Constants
 
 # Paths to raw TMA files.
-PATH_TO_RAW_DATA = "/deep/group/aihc-bootcamp-fall2021/lymphoma/raw"
+PATH_TO_RAW_DATA = config["raw"]
 PATH_TO_IMAGES = os.path.join(PATH_TO_RAW_DATA, "svs")
 
 # Path to processed data (extracted TMA patches)
-PATH_TO_PROCESSED_DATA = "/deep/group/aihc-bootcamp-fall2021/lymphoma/processed"
+PATH_TO_PROCESSED_DATA = config["processed"]
 PATH_TO_TMA_CORES = os.path.join(PATH_TO_PROCESSED_DATA, "cores")
 
 # Path to annotations and labels (diagnoses)
-PATH_TO_RAW_DATA = "/deep/group/aihc-bootcamp-fall2021/lymphoma/raw"
 PATH_TO_ANNOTATIONS_CSV = os.path.join(PATH_TO_RAW_DATA, "cores")
 
 # Get the list of paths to TMA svs files and TMA annotations csv files.

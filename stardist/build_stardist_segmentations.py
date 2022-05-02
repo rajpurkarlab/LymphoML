@@ -14,7 +14,12 @@ import matplotlib.pyplot as plt
 
 from PIL import Image
 
-PATH_TO_PROCESSED_DATA = "/deep/group/aihc-bootcamp-fall2021/lymphoma/processed"
+# Read Config
+config_path = '../config/config.json'
+with open(config_path, "r") as cnf:
+    config = json.load(cnf)
+
+PATH_TO_PROCESSED_DATA = config["processed"]
 PATH_TO_TMA_PATCHES = os.path.join(PATH_TO_PROCESSED_DATA, "tma_patches")
 PATH_TO_TMA_CORES = os.path.join(PATH_TO_PROCESSED_DATA, "cores")
 PATH_TO_OUTPUT_DATA = os.path.join(PATH_TO_PROCESSED_DATA, "stardist/stardist_core_segmentations")
