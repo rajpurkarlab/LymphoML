@@ -34,7 +34,7 @@ The [processing](https://github.com/stanfordmlgroup/lymphoma-ml/tree/main/proces
 
 ### Stardist
 
-This directory contains files used to run the StarDist algorithm on TMA cores for nuclei segmentation.
+The [Stardist](https://github.com/stanfordmlgroup/lymphoma-ml/tree/main/stardist) directory contains files used to run the StarDist algorithm on TMA cores for nuclei segmentation.
 
 - Run [build_stardist_segmentations.py](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/stardist/build_stardist_segmentations.py), which runs a pre-trained StarDist model checkpoint used for brightfield H&E images over each TMA core.
 - The [stardist_tutorial.ipynb](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/stardist/stardist_tutorial.ipynb) notebook displays the output of the StarDist algorithm on sample patches and cores on our dataset.
@@ -45,17 +45,17 @@ TODO
 
 ### CellProfiler
 
-This directory contains the files used to run the CellProfiler pipeline on each TMA core and train and evaluate interpretable models for lymphoma subtype classification.
+The [CellProfiler](https://github.com/stanfordmlgroup/lymphoma-ml/tree/main/cellprofiler) directory contains the files used to run the CellProfiler pipeline on each TMA core and train and evaluate interpretable models for lymphoma subtype classification.
 
 #### Pipelines
 
-The pipelines subdirectory contains the CellProfiler project and pipeline files. Run the CellProfiler pipeline using the following command (e.g. for TMA 1):
+The [pipelines](https://github.com/stanfordmlgroup/lymphoma-ml/tree/main/cellprofiler/pipelines) subdirectory contains the CellProfiler project and pipeline files. Run the CellProfiler pipeline using the following command (e.g. for TMA 1):
 
 `cellprofiler -c -r -p stardist.cppipe -o ~/processed/cellprofiler_out/stardist/tma_1 -i ~/processed/cellprofiler_in/tma_1`
 
 #### Feature Processing
 
-The Feature Processing subdirectory contains files used to process the output CellProfiler spreadsheets.
+The [feature_processing](https://github.com/stanfordmlgroup/lymphoma-ml/tree/main/cellprofiler/feature_processing) subdirectory contains files used to process the output CellProfiler spreadsheets.
 
 - Run [patch_identifiers.py](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/cellprofiler/feature_processing/patch_identifiers.py) to assign a `patch_id` for each cell. Use the provided flags `-p` and `-n` can be used to specify the number of pixels per patch or the number of patches extracted per core respectively. For example, run the following command: `python patch_identifiers.py -n 9` to extract nine (approximately) equally-sized patches from each core.
 
@@ -63,7 +63,7 @@ The Feature Processing subdirectory contains files used to process the output Ce
 
 #### Models
 
-The models subdirectory contains files used to train and evaluate gradient boosting models on the processed CellProfiler features to perform the lymphoma subtype classification task.
+The [models](https://github.com/stanfordmlgroup/lymphoma-ml/tree/main/cellprofiler/models) subdirectory contains files used to train and evaluate gradient boosting models on the processed CellProfiler features to perform the lymphoma subtype classification task.
 
 - Run [lgb_model.ipynb](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/cellprofiler/models/lgb_model.ipynb) to train and evaluate a gradient boosting model on the CellProfiler features. By default, this notebook runs eight-way lymphoma subtype classification using only nuclear morphological features. This notebook also contains options for performing tasks: DLBCL vs non-DLBCL classification or grouping lymphoma subtypes into clinically relevant categories, or using different sets of features (e.g. nuclear intensity/texture features, cytoplasmic features).
 
