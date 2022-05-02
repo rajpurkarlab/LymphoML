@@ -80,4 +80,6 @@ TODO:
 
 ### Overall TODOs
 
-- Fix all file references (use a config file?) 
+- Fix all file references (use a config file?)
+- Add an env.yml file
+- Upload any utils/scripts (e.g. groovy script for QuPath, building core_labels.csv file mapping each patient to their diagnosis).
