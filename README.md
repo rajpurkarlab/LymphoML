@@ -26,6 +26,8 @@ This directory contains files used to run the StarDist algorithm on TMA cores fo
 
 ### Deep-Learning
 
+TODO
+
 ### CellProfiler
 
 This directory contains the files used to run the CellProfiler pipeline on each TMA core and train and evaluate interpretable models for lymphoma subtype classification.
@@ -50,6 +52,16 @@ The models subdirectory contains files used to train and evaluate gradient boost
 
 - Run [lgb_model.ipynb](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/cellprofiler/models/lgb_model.ipynb) to train and evaluate a gradient boosting model on the CellProfiler features. By default, this notebook runs eight-way lymphoma subtype classification using only nuclear morphological features. This notebook also contains options for performing tasks: DLBCL vs non-DLBCL classification or grouping lymphoma subtypes into clinically relevant categories, or using different sets of features (e.g. nuclear intensity/texture features, cytoplasmic features).
 
+TODO: 
+- Add support for label grouping
+- Add support for using IHC stains
+- Specify how users can update certain constants to run experiments with different settings (e.g. change the task (8-way classification, 5-way classification (with label grouping), DLBCL vs non-DLBCL), use different features, or use IHC stains).
+
+
 ### Stats
 
-### Analysis
+TODO
+
+### Overall TODOs
+
+- Fix all file references (use a config file?) 
