@@ -20,9 +20,7 @@ conda env create -f environment.yml
 conda activate aihc
 ```
 
-## Code Usage
-
-We walk through the steps to reproduce the results in our study.
+## Code Organization
 
 The code in our study is organized in the following major components, which roughly corresponds to the directory structure in this repo.
 
@@ -34,7 +32,11 @@ The code in our study is organized in the following major components, which roug
 6. Interpretable Models
 7. Statistical Analysis
 
-To reproduce the deep-learning results, you only need to run the notebooks and scripts specified in sections 1-3.
+## Code Usage
+
+We walk through the steps to reproduce the results in our study.
+
+Note: to reproduce the deep-learning results, you only need to run the notebooks/scripts specified in sections 1-3.
 
 ### Data Processing
 
