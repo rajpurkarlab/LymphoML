@@ -19,6 +19,11 @@ This directory contains files used to process the raw data into a format suitabl
 
 ### Stardist
 
+This directory contains files used to run the StarDist algorithm on TMA cores for nuclei segmentation.
+
+- Run [build_stardist_segmentations.py](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/stardist/build_stardist_segmentations.py), which runs a pre-trained StarDist model checkpoint used for brightfield H&E images over each TMA core.
+- The [stardist_tutorial.ipynb](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/stardist/stardist_tutorial.ipynb) notebook displays the output of the StarDist algorithm on sample patches and cores on our dataset.
+
 ### Deep-Learning
 
 ### CellProfiler
