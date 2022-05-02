@@ -1,24 +1,28 @@
 # Imports
 
-import numpy as np
-import pandas as pd
-
-import itertools
-
-import os
 import glob
+import itertools
+import json
+import numpy as np
+import os
+import pandas as pd
 from argparse import ArgumentParser
 from tqdm import tqdm
 
-
+# Read config
+config_path = '../../config/config.json'
+with open(config_path, "r") as cnf:
+    config = json.load(cnf)
+    
 # Paths and constants
 
 # Paths for Aggregation
-PATH_TO_RAW_DATA = "/deep/group/aihc-bootcamp-fall2021/lymphoma/raw"
-PATH_TO_INPUT = "/deep/group/aihc-bootcamp-fall2021/lymphoma/processed/cores"
-PATH_TO_CELLPROFILER_OUT = "/deep/group/aihc-bootcamp-fall2021/lymphoma/processed/cellprofiler_out"
+PATH_TO_RAW_DATA = config["raw"] 
+PATH_TO_PROCESSED_DATA = config["processed"]
+PATH_TO_INPUT = os.path.join(PATH_TO_PROCESSED_DATA, "cores")
+PATH_TO_CELLPROFILER_OUT = os.path.join(PATH_TO_PROCESSED_DATA, "cellprofiler_out")
 
-PATH_TO_DATA_SPLITS = "/deep/group/aihc-bootcamp-fall2021/lymphoma/processed/data_splits"
+PATH_TO_DATA_SPLITS = config["data_splits"]
 
 PATH_TO_TRAIN_TEST_SPLIT = os.path.join(PATH_TO_RAW_DATA, "custom_train_test_split.csv")
 PATH_TO_DIAGNOSES = os.path.join(PATH_TO_RAW_DATA, "core_labels.csv")

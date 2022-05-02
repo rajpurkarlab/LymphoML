@@ -12,17 +12,6 @@ from sklearn.metrics import f1_score
 from sklearn.preprocessing import StandardScaler
 
 ###############################################################################
-# Constants
-###############################################################################
-
-PATH_TO_DATA_SPLITS = "/deep/group/aihc-bootcamp-fall2021/lymphoma/processed/data_splits"
-PATH_TO_FEATURE_SPLITS = os.path.join(PATH_TO_DATA_SPLITS, "custom_splits/cellprofiler/stardist_core")
-
-PATH_TO_TRAIN = os.path.join(PATH_TO_FEATURE_SPLITS, "train.csv")
-PATH_TO_VAL = os.path.join(PATH_TO_FEATURE_SPLITS, "val.csv")
-PATH_TO_TEST = os.path.join(PATH_TO_FEATURE_SPLITS, "test.csv")
-
-###############################################################################
 # Utilities to Select Feature Groups
 ###############################################################################
 

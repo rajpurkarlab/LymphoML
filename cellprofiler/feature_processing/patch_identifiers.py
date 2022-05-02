@@ -1,17 +1,24 @@
 import glob
 import itertools
+import json
 import math
 import os
 import numpy as np
 import pandas as pd
 from argparse import ArgumentParser
 
-PATH_TO_INPUT = "/deep/group/aihc-bootcamp-fall2021/lymphoma/processed/cores"
-PATH_TO_CELLPROFILER_OUT = "/deep/group/aihc-bootcamp-fall2021/lymphoma/processed/cellprofiler_out"
+# Read config
+config_path = '../../config/config.json'
+with open(config_path, "r") as cnf:
+    config = json.load(cnf)
+    
+PATH_TO_RAW_DATA = config["raw"] 
+PATH_TO_PROCESSED_DATA = config["processed"]
+PATH_TO_INPUT = os.path.join(PATH_TO_PROCESSED_DATA, "cores")
+PATH_TO_CELLPROFILER_OUT = os.path.join(PATH_TO_PROCESSED_DATA, "cellprofiler_out")
 PATH_TO_CELLPROFILER_FEATURES = os.path.join(PATH_TO_CELLPROFILER_OUT, "stardist")
 
 # Path to annotations and labels (diagnoses)
-PATH_TO_RAW_DATA = "/deep/group/aihc-bootcamp-fall2021/lymphoma/raw"
 PATH_TO_ANNOTATIONS_CSV = os.path.join(PATH_TO_RAW_DATA, "cores")
 
 # Constants
@@ -144,6 +151,5 @@ def main():
         add_patch_ids_to_cellprofiler_features(i, args.patch_size, args.patch_num)
 
 if __name__ == "__main__":
-    # Add argparse for the patch size.
     main()
-    # python cellprofiler_patch_identifiers.py -n 1
+    # python patch_identifiers.py -n 1

@@ -4,5 +4,6 @@
     "processed": "/deep/group/aihc-bootcamp-fall2021/lymphoma/processed",
     "tma_patches": "/deep/group/aihc-bootcamp-fall2021/lymphoma/processed/tma_patches",
     "data_splits": "/deep/group/aihc-bootcamp-fall2021/lymphoma/processed/data_splits",
-    "custom_splits": "/deep/group/aihc-bootcamp-fall2021/lymphoma/processed/data_splits/custom_splits"
+    "custom_splits": "/deep/group/aihc-bootcamp-fall2021/lymphoma/processed/data_splits/custom_splits",
+    "predictions": "/deep/group/aihc-bootcamp-fall2021/lymphoma/results/predictions"
 }

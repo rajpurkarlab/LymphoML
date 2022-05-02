@@ -1,17 +1,14 @@
 import glob
 import h5py
+import json
+import matplotlib.pyplot as plt
+import numpy as np
 import os
-
-# Import the StarDist 2D segmentation models.
-from stardist.models import StarDist2D
+import squidpy as sq
 # Import the recommended normalization technique for stardist.
 from csbdeep.utils import normalize
-
-# Import squidpy and additional packages needed for this tutorial.
-import squidpy as sq
-import numpy as np
-import matplotlib.pyplot as plt
-
+# Import the StarDist 2D segmentation models.
+from stardist.models import StarDist2D
 from PIL import Image
 
 # Read Config
