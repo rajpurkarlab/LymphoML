@@ -1,4 +1,4 @@
-# An Interpretable Computational Method identifies Morphologic Features that Correlate with Lymphoma Subtype
+# An Interpretable Computational Method Identifies Morphologic Features that Correlate with Lymphoma Subtype
 
 ### Abstract
 
