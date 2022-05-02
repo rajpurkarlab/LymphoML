@@ -44,9 +44,8 @@ To reproduce the deep-learning results, you only need to run the notebooks and s
 
 The [processing](https://github.com/stanfordmlgroup/lymphoma-ml/tree/main/processing) directory contains files used to process the raw data for ingestion in deep-learning models or CellProfiler.
 
-- First, run [process_raw_data_to_hdf5.ipynb](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/processing/process_raw_data_to_hdf5.ipynb) to transforms each input tissue microarray (TMA) SVS file and QuPath annotation file into an HDF5 file.
+- First, run [process_raw_data_to_hdf5.ipynb](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/processing/process_raw_data_to_hdf5.ipynb) to extract patches from each TMA SVS file and save the results in HDF5 file format.
 - Next, run [cores_to_tiff.py](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/processing/cores_to_tiff.py) to save each TMA core as a TIFF file. 
-
 - Finally, run [process_hdf5_to_data_splits.ipynb](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/processing/process_hdf5_to_data_splits.ipynb), which splits the data into train/val/test splits.
 
 ### Stardist
