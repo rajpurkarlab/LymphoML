@@ -17,7 +17,7 @@ conda env create -f environment.yml
 3. Activate the virtual environment:
 
 ```Shell
-conda activate aihc
+conda activate lymphoma
 ```
 
 ## Code Organization
@@ -89,7 +89,7 @@ The [models](https://github.com/stanfordmlgroup/lymphoma-ml/tree/main/cellprofil
 
 
 By default, this notebook runs eight-way lymphoma subtype classification using only nuclear morphological features. This notebook also contains options for performing tasks: 
-- DLBCL vs non-DLBCL classification
+- DLBCL vs non-DLBCL classification 
 - Grouping lymphoma subtypes into clinically relevant categories
 - Using other features (e.g. nuclear intensity/texture features, cytoplasmic features).
 
@@ -108,6 +108,4 @@ TODO:
 
 ### Overall TODOs
 
-- Fix all file references (use a config file?)
-- Add an env.yml file
 - Upload any utils/scripts (e.g. groovy script for QuPath, building core_labels.csv file mapping each patient to their diagnosis).
