@@ -28,6 +28,16 @@ This directory contains files used to run the StarDist algorithm on TMA cores fo
 
 ### CellProfiler
 
+This directory contains the files used to run the CellProfiler pipeline on each TMA core. It also contains files used to train interpretable gradient boosting models using LightGBM to perform the lymphoma subtype classification task.
+
+#### Pipelines
+
+The pipelines subdirectory contains the CellProfiler project and pipeline files. Run the CellProfiler pipeline using the following command (e.g. for TMA 1):
+
+`cellprofiler -c -r -p stardist.cppipe -o ~/processed/cellprofiler_out/stardist/tma_1 -i ~/processed/cellprofiler_in/tma_1 -f 1 -l 17313`
+
 #### Feature Processing
+
+The Feature Processing subdirectory 
 
 #### Models
