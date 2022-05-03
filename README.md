@@ -89,16 +89,13 @@ The [models](https://github.com/stanfordmlgroup/lymphoma-ml/tree/main/cellprofil
 
 - Run [lgb_model.ipynb](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/cellprofiler/models/lgb_model.ipynb) to train and evaluate a gradient boosting model on the CellProfiler features. 
 
-
-By default, this notebook runs eight-way lymphoma subtype classification using only nuclear morphological features. This notebook also contains options for performing tasks: 
-- DLBCL vs non-DLBCL classification 
-- Grouping lymphoma subtypes into clinically relevant categories
-- Using other features (e.g. nuclear intensity/texture features, cytoplasmic features).
+By default, this notebook runs eight-way lymphoma subtype classification using only nuclear morphological features. This notebook also contains options for performing different modifications of this base task: 
+- Set `ENABLE_DLBCL_CLASSIFICATION` to perform DLBCL vs non-DLBCL classification 
+- Set `ENABLE_LABEL_GROUPING` to grouping lymphoma subtypes into clinically relevant categories
+- Set `FEATURES` to experiment using other features (e.g. nuclear intensity/texture features, cytoplasmic features, or all features).
 
 TODO: 
-- Add support for label grouping
-- Add support for using IHC stains
-- Specify how users can update certain constants to run experiments with different settings (e.g. change the task (8-way classification, 5-way classification (with label grouping), DLBCL vs non-DLBCL), use different features, or use IHC stains).
+- Add support for using IHC stains (either to this base notebook or to another new notebook for running IHC experiments)
 
 ### Spatial
 
