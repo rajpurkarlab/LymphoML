@@ -20,6 +20,8 @@ conda env create -f environment.yml
 conda activate lymphoma
 ```
 
+4. Download the latest version of [CellProfiler](https://cellprofiler.org/releases/). We recommend running CellProfiler in headless mode (using the command-line) for running over a large number of iamges. 
+
 ## Code Organization
 
 The code in our study is organized in the following major components, which roughly corresponds to the directory structure in this repo.
