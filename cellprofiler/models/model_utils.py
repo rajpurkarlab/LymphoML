@@ -65,27 +65,28 @@ def get_nuclei_cytoplasm_morphological_features(all_features):
 
 pp = pprint.PrettyPrinter(indent=4)
 
-def get_processed_df_splits(train_features_df, val_features_df, test_features_df, feature_cols):
+## TODO(vishankar): Get rid of the group_labels argument.
+def get_processed_df_splits(train_features_df, val_features_df, test_features_df, feature_cols, group_labels):
     train_features_df = train_features_df[feature_cols + ["patient_id", "label", "count"]].dropna().reset_index(drop=True)
     val_features_df = val_features_df[feature_cols + ["patient_id", "label", "count"]].dropna().reset_index(drop=True)
     test_features_df = test_features_df[feature_cols + ["patient_id", "label", "count"]].dropna().reset_index(drop=True)
     
+    train_features_df["label"] = train_features_df["label"].apply(group_labels)
+    val_features_df["label"] = val_features_df["label"].apply(group_labels)
+    test_features_df["label"] = test_features_df["label"].apply(group_labels)
+    
     return (train_features_df, val_features_df, test_features_df)
 
-def get_splits(train_features_df, val_features_df, test_features_df,
-    feature_cols, enable_dlbcl_classification=False, enable_normalization=True):
+## TODO(vishankar): Get rid of the group_labels argument.
+def get_splits(train_features_df, val_features_df, test_features_df, feature_cols, group_labels, enable_normalization):
     (train_features_df, val_features_df, test_features_df) = get_processed_df_splits(
-        train_features_df, val_features_df,test_features_df, feature_cols)
+        train_features_df, val_features_df,test_features_df, feature_cols, group_labels)
     train_df = pd.concat([train_features_df, val_features_df])
     test_df = test_features_df
     X_train = train_df[feature_cols].astype(np.float32)
     y_train = train_df["label"]
     X_test = test_df[feature_cols].astype(np.float32)
     y_test = test_df["label"]
-    
-    if enable_dlbcl_classification:
-        y_train = y_train.apply(lambda l : 0 if l == 0 else 1)
-        y_test = y_test.apply(lambda l : 0 if l == 0 else 1)
     
     if enable_normalization:
         scaler = StandardScaler()
@@ -126,11 +127,9 @@ def build_metrics_dict(train, train_acc, test_acc, macro_f1, micro_f1, weighted_
     metrics["cnf_matrix"] = cnf_matrix
     return metrics
 
-def get_core_metrics(features_df, preds_patch, enable_dlbcl_classification=False):
+def get_core_metrics(features_df, preds_patch):
     features_df["preds_patch"] = preds_patch
     y_core = features_df.groupby("patient_id")["label"].agg(pd.Series.mode)
-    if enable_dlbcl_classification:
-        y_core = y_core.apply(lambda l : 0 if l == 0 else 1)
     preds_core = features_df.groupby("patient_id")["preds_patch"].agg(lambda x: pd.Series.mode(x)[0])
     accuracy = compute_accuracy(preds_core, y_core)
     return (y_core, preds_core, accuracy)
