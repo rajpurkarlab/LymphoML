@@ -20,7 +20,7 @@ conda env create -f environment.yml
 conda activate lymphoma
 ```
 
-4. Download the latest version of [CellProfiler](https://cellprofiler.org/releases/). We recommend running CellProfiler in headless mode (using the command-line) for running over a large number of iamges. 
+4. Download the latest version of [CellProfiler](https://cellprofiler.org/releases/). We recommend running CellProfiler in headless mode (using the command-line) for running over a large number of images. 
 
 ## Code Organization
 
