@@ -17,8 +17,10 @@ conda env create -f environment.yml
 3. Activate the virtual environment:
 
 ```Shell
-conda activate aihc
+conda activate lymphoma
 ```
+
+4. Download the latest version of [CellProfiler](https://cellprofiler.org/releases/). We recommend running CellProfiler in headless mode (using the command-line) for running over a large number of images. 
 
 ## Code Organization
 
@@ -66,18 +68,18 @@ The [CellProfiler](https://github.com/stanfordmlgroup/lymphoma-ml/tree/main/cell
 The [pipelines](https://github.com/stanfordmlgroup/lymphoma-ml/tree/main/cellprofiler/pipelines) subdirectory contains the CellProfiler project and pipeline files. Run the CellProfiler pipeline using the following command (e.g. for TMA 1):
 
 ```Shell
-cellprofiler -c -r -p stardist.cppipe -o ~/processed/cellprofiler_out/stardist/tma_1 -i ~/processed/cellprofiler_in/tma_1`
+cellprofiler -c -r -p stardist.cppipe -o ~/processed/cellprofiler_out/stardist/tma_1 -i ~/processed/cellprofiler_in/tma_1
 ```
 
 #### Feature Processing
 
 The [feature_processing](https://github.com/stanfordmlgroup/lymphoma-ml/tree/main/cellprofiler/feature_processing) subdirectory contains files used to process the output CellProfiler spreadsheets.
 
-- Run [patch_identifiers.py](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/cellprofiler/feature_processing/patch_identifiers.py) to assign a `patch_id` for each cell. Use the provided flags `-p` and `-n` can be used to specify the number of pixels per patch or the number of patches extracted per core respectively.
+- Run [patch_identifiers.py](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/cellprofiler/feature_processing/patch_identifiers.py) to assign a `patch_id` for each cell. The flags `-p` and `-n` can be used to specify the number of pixels per patch or the number of patches extracted per core respectively.
 
 Run the following command to extract nine (approximately) equally-sized patches from each core.
 ```Shell
-python patch_identifiers.py -n 9`
+python patch_identifiers.py -n 9
 ```
 - Run [feature_aggregation.py](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/cellprofiler/feature_processing/feature_aggregation.py) to aggregate features across all cells with the same `patch_id`. 
 
@@ -89,7 +91,7 @@ The [models](https://github.com/stanfordmlgroup/lymphoma-ml/tree/main/cellprofil
 
 
 By default, this notebook runs eight-way lymphoma subtype classification using only nuclear morphological features. This notebook also contains options for performing tasks: 
-- DLBCL vs non-DLBCL classification
+- DLBCL vs non-DLBCL classification 
 - Grouping lymphoma subtypes into clinically relevant categories
 - Using other features (e.g. nuclear intensity/texture features, cytoplasmic features).
 
@@ -108,6 +110,4 @@ TODO:
 
 ### Overall TODOs
 
-- Fix all file references (use a config file?)
-- Add an env.yml file
 - Upload any utils/scripts (e.g. groovy script for QuPath, building core_labels.csv file mapping each patient to their diagnosis).
