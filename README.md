@@ -108,3 +108,5 @@ TODO:
 ### Overall TODOs
 
 - Upload any utils/scripts (e.g. groovy script for QuPath, building core_labels.csv file mapping each patient to their diagnosis).
+- Need to cleanup and update the output and input file references for all notebooks/scripts
+- Do a test run e2e to make sure we can reproduce the results.
