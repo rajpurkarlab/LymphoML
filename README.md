@@ -101,8 +101,8 @@ TODO:
 
 The [spatial](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/spatial) subdirectory contains files used to extract Ripley K function values and concatenate this information to the rest of H&E featurs. 
 
-- Section "Save Centroid Location info" in [spatial_features_processing.ipynb](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/spatial/spatial_features_processing.ipynb) contains code used to save centroids location information from stardist output into csv files.
-- Run [ripleyK.r](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/spatial/ripleyK.r) to compute the spatial relationships between centroids in each saved patches.
+- Section "Save Centroid Location info" in [spatial_features_processing.ipynb](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/spatial/spatial_features_processing.ipynb) saves centroids location information from stardist output into csv files.
+- Run [ripleyK.r](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/spatial/ripleyK.r) to compute the spatial relationships between centroids on each saved patch.
 - Run "Concatenating R Output to Other H&E Features" section in [spatial_features_processing.ipynb](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/spatial/spatial_features_processing.ipynb) to combine the spatial features and your current feature dataframe.
 
 ### Stats
