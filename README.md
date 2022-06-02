@@ -109,5 +109,5 @@ The [spatial](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/spatial) 
 
 The [stats](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/stats) subdirectory contains code that we use to compute confidence intervals for all our experiment results. 
 
-- Set `num_replciates` to change number of bootstrapped samples to generate.
+- Set `num_replicates` to change number of bootstrapped samples to generate.
 - Set `per_class` to compute confidence intervals for a specific class/label.
