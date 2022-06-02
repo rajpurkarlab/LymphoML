@@ -94,9 +94,6 @@ By default, this notebook runs eight-way lymphoma subtype classification using o
 - Set `ENABLE_LABEL_GROUPING` to grouping lymphoma subtypes into clinically relevant categories
 - Set `FEATURES` to experiment using other features (e.g. nuclear intensity/texture features, cytoplasmic features, or all features).
 
-TODO: 
-- Add support for using IHC stains (either to this base notebook or to another new notebook for running IHC experiments)
-
 ### Spatial
 
 The [spatial](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/spatial) subdirectory contains files used to extract Ripley K function values and concatenate this information to the rest of H&E featurs. 
