@@ -94,8 +94,7 @@ By default, this notebook runs eight-way lymphoma subtype classification using o
 - Set `ENABLE_LABEL_GROUPING` to grouping lymphoma subtypes into clinically relevant categories
 - Set `FEATURES` to experiment using other features (e.g. nuclear intensity/texture features, cytoplasmic features, or all features).
 
-TODO: 
-- Add support for using IHC stains (either to this base notebook or to another new notebook for running IHC experiments)
+- Run [immunostains.ipynb](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/cellprofiler/models/immunostains.ipynb) to preprocess IHC stains data and grouping lymphoma subtypes if necessary. The same LightGBM model as coded in [lgb_model.ipynb](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/cellprofiler/models/lgb_model.ipynb) was used after that for immunostains experiment in the paper.
 
 ### Spatial
 
