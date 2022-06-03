@@ -98,21 +98,15 @@ By default, this notebook runs eight-way lymphoma subtype classification using o
 
 ### Spatial
 
-The [spatial] (https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/spatial) subdirectory contains files used to extract Ripley K function values and concatenate this information to the rest of H&E featurs. 
+The [spatial](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/spatial) subdirectory contains files used to extract Ripley K function values and concatenate this information to the rest of H&E featurs. 
 
-- Section ``Save Centroid Location info'' in [spatial_features_processing.ipynb] (https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/spatial/spatial_features_processing.ipynb) contains code used to save centroids location information from stardist output into csv files.
-- Run [ripleyK.r] ((https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/spatial/ripleyK.r) to compute the spatial relationships between centroids in each saved patches.
-- Run ``Concatenating R Output to Other H&E Features'' section in [spatial_features_processing.ipynb] ((https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/spatial/spatial_features_processing.ipynb) to combine the spatial features and your current feature dataframe.
+- Section "Save Centroid Location info" in [spatial_features_processing.ipynb](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/spatial/spatial_features_processing.ipynb) saves centroids location information from stardist output into csv files.
+- Run [ripleyK.r](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/spatial/ripleyK.r) to compute the spatial relationships between centroids on each saved patch.
+- Run "Concatenating R Output to Other H&E Features" section in [spatial_features_processing.ipynb](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/spatial/spatial_features_processing.ipynb) to combine the spatial features and your current feature dataframe.
 
 ### Stats
 
-The [stats] (https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/stats) subdirectory contains code that we use to compute confidence intervals for all our experiment results. 
+The [stats](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/stats) subdirectory contains code that we use to compute confidence intervals for all our experiment results. 
 
-- Set `num_replciates` to change number of bootstrapped samples to generate.
+- Set `num_replicates` to change number of bootstrapped samples to generate.
 - Set `per_class` to compute confidence intervals for a specific class/label.
-
-### Overall TODOs
-
-- Upload any utils/scripts (e.g. groovy script for QuPath, building core_labels.csv file mapping each patient to their diagnosis).
-- Need to cleanup and update the output and input file references for all notebooks/scripts
-- Do a test run e2e to make sure we can reproduce the results.
