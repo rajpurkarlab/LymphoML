@@ -57,7 +57,12 @@ The [Stardist](https://github.com/stanfordmlgroup/lymphoma-ml/tree/main/stardist
 
 ### Deep-Learning
 
-**TODO**
+The deep learning consists of training and testing procedures for two types of deep learning models: Self-Supervised ResNet on H&E images and the TripletNet architecture trained on the CAMELYON 16 challenge. This set of instructions assumes that you have filled the `predictions` and `checkpoints` with the desired paths in the [`config.json`](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/config/config.json).
+
+- Having split the data into hdf5 files, we can train the models the corresponding configuration files given in the [`yaml`](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/dl/yaml) directory. This has a few example configurations for Naive training (the experiments we reported, as well as some partial results with Multiple Instance Learning that are yet to be tested in depth). Generate the relevant configuration based on the documentation provided in the examples.
+- Run the train command [`train_naive.py`](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/dl/) to run naive training (and `train_mil.py` for partial MIL experiments). This will train the model with the parameters (number of GPUs, learning rate, batch size, model architecture, etc.) specified and write the final checkpoint to the path required
+- Run [`eval_naive.py`](https://github.com/stanfordmlgroup/lymphoma-ml/blob/main/dl/) to get the final CSV with the individual predictions per patch. These are aggregated by `core_level_metrics.ipynb` in the same notebook to give the final TMA core-level and patient-level  metrics.
+- Statistical analysis is done in the sections further below.
 
 ### CellProfiler
 
