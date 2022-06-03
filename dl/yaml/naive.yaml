@@ -1,0 +1,12 @@
+batch_size: 64
+epochs: 50
+lr: 1e-3
+num_classes: 9
+finetune: True
+layers_tune: 9
+optimizer: 'Adam'
+aug_data: True
+num_workers: 4
+model_type: 'tripletnet'
+ckpt_name: 'tripletnet'
+stored_features: True
